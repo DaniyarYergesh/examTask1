@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp" />
+            <solid android:color="@color/color0" />
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/ic_round_panorama_fish_eye_24"
+        android:top="12dp"
+        android:bottom="12dp"
+        android:left="13dp"
+        android:right="13dp"/>
+</layer-list>
