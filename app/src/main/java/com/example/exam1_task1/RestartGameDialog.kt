@@ -18,6 +18,9 @@ class RestartGameDialog : DialogFragment(R.layout.dialog_custom) {
         if((activity as MainActivity).whoWon==2){
             view.findViewById<TextView>(R.id.whoWon).text = "Выиграл нолик!"
         }
+        if((activity as MainActivity).whoWon==0){
+            view.findViewById<TextView>(R.id.whoWon).text = "Ничья"
+        }
         with(view) {
             findViewById<Button>(R.id.restartBtn).setOnClickListener {
                 (activity as DialogCallBack).restartGame()

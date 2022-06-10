@@ -65,15 +65,15 @@ class MainActivity : AppCompatActivity(), RestartGameDialog.DialogCallBack {
                     whoWon = 1
                     krestiki.clear()
                     noliki.clear()
-                    indicatorForQueue = 1
-                    supportFragmentManager.beginTransaction().add(R.id.dialogFrame, RestartGameDialog()).commit()
-                    for (anyButton in listOfButtons){
+                    indicatorForQueue = -1
+                    supportFragmentManager.beginTransaction()
+                        .add(R.id.dialogFrame, RestartGameDialog()).commit()
+                    for (anyButton in listOfButtons) {
                         anyButton.isClickable = false
                     }
                 }
             }
-        }
-        else {
+        } else {
             button.background =
                 AppCompatResources.getDrawable(this, R.drawable.button_clicked_nolik)
             turOfString.text = "Ходит: крестик"
@@ -84,13 +84,17 @@ class MainActivity : AppCompatActivity(), RestartGameDialog.DialogCallBack {
                     noliki.clear()
                     krestiki.clear()
                     indicatorForQueue = 1
-                    supportFragmentManager.beginTransaction().add(R.id.dialogFrame, RestartGameDialog()).commit()
-                    for (anyButton in listOfButtons){
+                    supportFragmentManager.beginTransaction()
+                        .add(R.id.dialogFrame, RestartGameDialog()).commit()
+                    for (anyButton in listOfButtons) {
                         anyButton.isClickable = false
                     }
                 }
             }
-
+        }
+        if(indicatorForQueue==8){supportFragmentManager.beginTransaction()
+            .add(R.id.dialogFrame, RestartGameDialog()).commit()
+            indicatorForQueue = -1
         }
         indicatorForQueue++
         button.isClickable = false
